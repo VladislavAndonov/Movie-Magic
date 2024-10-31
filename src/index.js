@@ -1,7 +1,7 @@
 import express from "express";
 import handlebars from "express-handlebars";
 
-import routes from './routes.js;
+import routes from './routes.js';
 
 const app = express();
 
