@@ -26,10 +26,20 @@
       "genre": "Superhero",
       "director": "Christopher Nolan",
       "year": "2008",
-      "imagUrl": "https://m.media-amazon.com/images/S/pv-target-images/e9a43e647b2ca70e75a3c0af046c4dfdcd712380889779cbdc2c57d94ab63902.jpg",
+      "imageUrl": "https://m.media-amazon.com/images/S/pv-target-images/e9a43e647b2ca70e75a3c0af046c4dfdcd712380889779cbdc2c57d94ab63902.jpg",
       "rating": "9",
       "description": "When a menace known as the Joker wreaks havoc and chaos on the people of Gotham, Batman, James Gordon and Harvey Dent must work together to put an end to the madness.",
       "id": "cvwudw3qom34ch2m3"
+    },
+    {
+      "title": "Inception",
+      "genre": "Sci-Fi",
+      "director": "Christopher Nolan",
+      "year": "2010",
+      "imageUrl": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRRyuWmayVBvqjd1MxTKpRgauq2cCtUzb7Q9QvaFTkAuxAU_EYMoCE3wBuJeftxIzf0grreIw",
+      "rating": "9",
+      "description": "A thief who steals corporate secrets through the use of dream-sharing technology is given the inverse task of planting an idea into the mind of a C.E.O., but his tragic past may doom the project and his team to disaster.",
+      "id": "cvwudwcg8m34cxfvo"
     }
   ]
 }
