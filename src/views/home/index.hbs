@@ -2,9 +2,9 @@
 <section id="search">
     <h1>Search</h1>
     <form method="GET" class="form">
-        <input type="text" class="search" name="search" placeholder="Title...">
-        <input type="text" name="genre" class="genre" placeholder="Genre...">
-        <input type="number" name="year" class="year" placeholder="Year...">
+        <input type="text" class="search" name="search" value="{{filter.search}}" placeholder="Title...">
+        <input type="text" name="genre" value="{{filter.genre}}" class="genre" placeholder="Genre...">
+        <input type="number" name="year" value="{{filter.year}}" class="year" placeholder="Year...">
         <input type="submit" value="search">
     </form>
 </section>

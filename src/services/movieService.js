@@ -2,19 +2,19 @@ import uniqid from "uniqid";
 
 import movieData from "../data/movieData.js";
 
-const getAll = async (query = {}) => {
+const getAll = async (filter = {}) => {
     let movies = await movieData.getAll();
 
-    if (query.search) {
-        movies = movies.filter(movie => movie.title.toLowerCase().includes(query.search.toLowerCase()));
+    if (filter.search) {
+        movies = movies.filter(movie => movie.title.toLowerCase().includes(filter.search.toLowerCase()));
     }
 
-    if (query.genre) {
-        movies = movies.filter(movie => movie.genre.toLowerCase() === query.genre.toLowerCase());
+    if (filter.genre) {
+        movies = movies.filter(movie => movie.genre.toLowerCase() === filter.genre.toLowerCase());
     }
 
-    if (query.year) {
-        movies = movies.filter(movie => movie.year === query.year);
+    if (filter.year) {
+        movies = movies.filter(movie => movie.year === filter.year);
     }
 
     return movies;
