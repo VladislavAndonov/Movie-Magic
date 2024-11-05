@@ -1,3 +1,15 @@
+{{#if isSearch}}
+<section id="search">
+    <h1>Search</h1>
+    <form method="GET" class="form">
+        <input type="text" class="search" name="search" placeholder="Title...">
+        <input type="text" name="genre" class="genre" placeholder="Genre...">
+        <input type="number" name="year" class="year" placeholder="Year...">
+        <input type="submit" value="search">
+    </form>
+</section>
+{{/if}}
+
 <section id="catalog">
     <h1>All Movies</h1>
     <div class="band">
