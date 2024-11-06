@@ -1,9 +1,12 @@
 import routes from "./routes.js";
+import express from "express";
 import handlebarsInit from "./config/handlebarsInit.js";
 import expressInit from "./config/expressInit.js";
+import mongooseInit from "./config/mongooseInit.js";
 
 const app = express();
 
+mongooseInit();
 expressInit(app);
 handlebarsInit(app);
 
