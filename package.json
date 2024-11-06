@@ -14,8 +14,7 @@
   "dependencies": {
     "express": "^4.21.1",
     "express-handlebars": "^8.0.1",
-    "mongoose": "^8.8.0",
-    "uniqid": "^5.4.0"
+    "mongoose": "^8.8.0"
   },
   "devDependencies": {
     "nodemon": "^3.1.7"
