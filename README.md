@@ -14,8 +14,8 @@ JS Back-End Course Workshop @SoftUni
 7. Add routes and controllers
 8. Extract partial template
 9. Add service and data layers
-10. Add Create page
-11. Add Details page
+10. Add Create Movie page
+11. Add Movie Details page
 12. Add Search functionality
 
 ## MongoDB and Mongoose
@@ -23,3 +23,5 @@ JS Back-End Course Workshop @SoftUni
 2. Setup mongoose
 3. Add models
 4. Convert file based storage to db storage
+5. Add cast model
+6. Add Create Cast page

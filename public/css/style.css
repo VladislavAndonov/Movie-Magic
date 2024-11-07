@@ -1,4 +1,5 @@
 @import url('./site.css');
+@import url('./home.css');
 @import url('./responsive.css');
 @import url('./register-login.css');
 @import url('./all-posts.css');
@@ -7,3 +8,5 @@
 @import url('./404.css');
 @import url('./search.css');
 @import url('./about.css');
+@import url('./create-cast.css');
+@import url('./attach.css');
