@@ -9,9 +9,7 @@ function toArray(documents) {
 
 router.get("/", async (req, res) => {
     const movies = await movieService.getAll();
-    res.render("home", { movies: toArray(movies) });
-    console.log(movies);
-    
+    res.render("home", { movies: toArray(movies) });    
 });
 
 router.get("/about", (req, res) => {
