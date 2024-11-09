@@ -9,7 +9,7 @@ router.get("/create", (req, res) => {
 });
 
 function toArray(documents) {
-    return documents.map(document => document.toObject());
+    return documents.map((document) => document.toObject());
 }
 
 router.post("/create", async (req, res) => {
@@ -30,11 +30,13 @@ router.get("/search", async (req, res) => {
 router.get("/:movieId/details", async (req, res) => {
     const movieId = req.params.movieId;
     const movie = await movieService.getOne(movieId).lean();
-    
 
     res.render("movies/details", { movie });
     movie.ratingView = getRatingViewData(movie.rating);
+});
 
+router.get("/:movieId/attach", (req, res) => {
+    res.render("movies/attach");
 });
 
 function getRatingViewData(rating) {
