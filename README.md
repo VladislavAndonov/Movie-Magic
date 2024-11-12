@@ -26,3 +26,11 @@ JS Back-End Course Workshop @SoftUni
 5. Add cast model
 6. Add Create Cast page
 7. Add Attach new cast page
+8. Show casts in details page
+
+## Authentication and Authorization
+1. Add register page
+   1. Add user model
+   2. Add Auth controller
+   3. Add Auth service
+2. Add login page

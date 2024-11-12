@@ -1,12 +1,35 @@
 import { Schema, model, Types } from "mongoose";
 
 const movieSchema = new Schema({
-    title: String,
-    genre: String,
-    director: String,
-    year: Number,
-    rating: Number,
-    description: String,
+    title: {
+        type: String,
+        required: true,
+    },
+    genre: {
+        type: String,
+        required: true,
+    },
+    director: {
+        type: String,
+        required: true,
+    },
+    year: {
+        type: Number,
+        required: true,
+        min: 1900,
+        max: 2025
+    },
+    rating: {
+        type: String,
+        required: true,
+        min: 1,
+        max: 10
+    },
+    description: {
+        type: String,
+        required: true,
+        maxLength: 300
+    },
     imageUrl: String,
     casts: [
         {
