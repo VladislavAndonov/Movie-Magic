@@ -8,7 +8,7 @@ router.get("/register", (req, res) => {
 });
 
 router.post("/register", async (req, res) => {
-    const { email, password, rePassword } = req.body;
+    const { email, password } = req.body;
 
     await authService.register(email, password);
 
@@ -22,9 +22,9 @@ router.get("/login", (req, res) => {
 router.post("/login", async (req, res) => {
     const { email, password } = req.body;
 
-    await authService.login(email, password);
+    const token = await authService.login(email, password);
 
-    // TODO: Add token to cookie
+    res.cookie("auth", token, { httpOnly: true });
 
     res.redirect("/");
 });

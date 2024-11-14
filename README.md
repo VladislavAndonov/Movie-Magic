@@ -5,9 +5,9 @@ JS Back-End Course Workshop @SoftUni
 `npm run dev` - for developing
 
 ## ExpressJS and Templating
-1. Initial Project Architecture
-2. Setup express
-3. Setup handlebars
+1. Initial Project Architecture `npm init --y`
+2. Setup express `npm i express`
+3. Setup handlebars `npm i express handlebars`
 4. Add resources
 5. Setup static route
 6. Render home page
@@ -20,7 +20,7 @@ JS Back-End Course Workshop @SoftUni
 
 ## MongoDB and Mongoose
 1. Extract init files
-2. Setup mongoose
+2. Setup mongoose `npm i mongoose`
 3. Add models
 4. Convert file based storage to db storage
 5. Add cast model
@@ -33,7 +33,10 @@ JS Back-End Course Workshop @SoftUni
    1. Add user model
    2. Add Auth controller
    3. Add Auth service
-2. Add login page
+2. Hash password before save `npm i bcrypt`
+3. Add login page
    1. Validate hashed password
-   2. Create JWT token
-   3. Add token to cookie
+   2. Create JWT token `npm i jasonwebtoken`
+   3. Add token to cookie `npm i cookie-parser`
+4. Add authorization
+5. Add dynamic navigation
