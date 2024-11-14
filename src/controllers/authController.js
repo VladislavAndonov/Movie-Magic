@@ -19,4 +19,14 @@ router.get("/login", (req, res) => {
     res.render("auth/login");
 });
 
+router.post("/login", async (req, res) => {
+    const { email, password } = req.body;
+
+    await authService.login(email, password);
+
+    // TODO: Add token to cookie
+
+    res.redirect("/");
+});
+
 export default router;

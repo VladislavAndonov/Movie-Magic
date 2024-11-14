@@ -34,3 +34,6 @@ JS Back-End Course Workshop @SoftUni
    2. Add Auth controller
    3. Add Auth service
 2. Add login page
+   1. Validate hashed password
+   2. Create JWT token
+   3. Add token to cookie
