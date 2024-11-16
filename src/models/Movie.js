@@ -20,7 +20,7 @@ const movieSchema = new Schema({
         max: 2025
     },
     rating: {
-        type: String,
+        type: Number,
         required: true,
         min: 1,
         max: 10
@@ -37,6 +37,11 @@ const movieSchema = new Schema({
             ref: 'Cast'
         },
     ],
+    owner: {
+        type: Types.ObjectId,
+        ref: 'User'
+    }
+
 });
 
 const Movie = model("Movie", movieSchema);
