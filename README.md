@@ -36,7 +36,7 @@ JS Back-End Course Workshop @SoftUni
 2. Hash password before save `npm i bcrypt`
 3. Add login page
    1. Validate hashed password
-   2. Create JWT token `npm i jasonwebtoken`
+   2. Create JWT token `npm i jsonwebtoken`
    3. Add token to cookie `npm i cookie-parser`
 4. Add authorization
 5. Add dynamic navigation
