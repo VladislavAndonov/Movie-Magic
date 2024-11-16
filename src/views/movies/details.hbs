@@ -16,25 +16,22 @@
                         <p class="card-ranking">Rating:
                             <span id="stars">{{{movie.ratingView}}}</span></p>
                     </div>
-
+                    </div>
+                        <p class="disc">Description: {{movie.description}}</p>
+                     <div>                   
                 </div>
 
-                <p class="disc">Description: {{movie.description}}</p>
-                <div>
-                    <a
-                        style="display:inline-block"
-                        href="/movies/{{movie._id}}/attach"
-                        class="details"
-                    >Attach Cast</a>
-                </div>
-
-                {{#if isOwner}}
-                <div class="details-btn">
-                    <a href="" id="edit-button">Edit</a>
-                    <a href="/movies/{{movie._id}}/delete" id="delete-button">Delete</a>
-                </div>
-                {{/if}}
+                
             </div>
+
+            {{#if isOwner}}
+                <div class="details-btn ">
+                    <a href="/movies/{{movie._id}}/edit" id="edit-button">Edit</a>
+                    <a href="/movies/{{movie._id}}/delete" id="delete-button">Delete</a>
+                    <a href="/movies/{{movie._id}}/attach" id="attach-button">Attach Cast</a>
+                </div>
+            {{/if}}
+
         </div>
         <div class="card_right">
             <img src="{{movie.imageUrl}}" alt="{{movie.title}}" />

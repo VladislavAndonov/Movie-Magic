@@ -61,6 +61,12 @@ router.get('/:movieId/delete', async (req, res) => {
     await movieService.remove(movieId);
 
     res.redirect('/');
+});
+
+router.get('/:movieId/edit', async (req, res) => {
+    const movieId = req.params.movieId;
+
+    res.render('movies/edit');
 })
 
 function getRatingViewData(rating) {
