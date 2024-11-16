@@ -55,6 +55,14 @@ router.post("/:movieId/attach", async (req, res) => {
     res.redirect(`/movies/${movieId}/details`);
 });
 
+router.get('/:movieId/delete', async (req, res) => {
+    const movieId = req.params.movieId;
+
+    await movieService.remove(movieId);
+
+    res.redirect('/');
+})
+
 function getRatingViewData(rating) {
     if (!Number.isInteger(rating)) {
         return "n/a";
