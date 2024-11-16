@@ -5,7 +5,7 @@
                 bring them all and in the darkness bind them."</h2>
         </div>
 
-        <form action="#" method="" class="editForm">
+        <form method="POST" class="editForm">
             <h2>Edit Post</h2>
             <ul class="noBullet">
                 <li>
@@ -14,8 +14,8 @@
                         type="text"
                         class="inputFields"
                         id="title"
-                        name=""
-                        value="The Little Marmaid"
+                        name="title"
+                        value="{{movie.title}}"
                     />
                 </li>
                 <li>
@@ -24,8 +24,8 @@
                         type="text"
                         class="inputFields"
                         id="genre"
-                        name=""
-                        value="Fantasy"
+                        name="genre"
+                        value="{{movie.genre}}"
                     />
                 </li>
                 <li>
@@ -34,8 +34,8 @@
                         type="text"
                         class="inputFields"
                         id="director"
-                        name=""
-                        value="Rob Marshall"
+                        name="director"
+                        value="{{movie.director}}"
                     />
                 </li>
                 <li>
@@ -44,8 +44,8 @@
                         type="number"
                         class="inputFields"
                         id="year"
-                        name=""
-                        value="2023"
+                        name="year"
+                        value="{{movie.year}}"
                     />
                 </li>
                 <li>
@@ -54,8 +54,8 @@
                         type="text"
                         class="inputFields"
                         id="image"
-                        name=""
-                        value="https://m.media-amazon.com/images/M/MV5BYTUxYjczMWUtYzlkZC00NTcwLWE3ODQtN2I2YTIxOTU0ZTljXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_FMjpg_UX1000_.jpg"
+                        name="imageUrl"
+                        value="{{movie.imageUrl}}"
                     />
                 </li>
                 <li>
@@ -64,8 +64,8 @@
                         type="text"
                         class="inputFields"
                         id="rating"
-                        name=""
-                        value="4"
+                        name="rating"
+                        value="{{movie.rating}}"
                     />
                 </li>
                 <li>
@@ -74,13 +74,7 @@
                         id="description"
                         class="inputFields"
                         name="description"
-                    >The youngest of King Triton's daughters, Ariel is a
-                        beautiful and spirited young mermaid with a thirst for
-                        adventure. Longing to find out more about the world
-                        beyond the sea, Ariel visits the surface and falls for
-                        the dashing Prince Eric. Following her heart, she makes
-                        a deal with the evil sea witch, Ursula, to experience
-                        life on land.</textarea>
+                    >"{{movie.description}}"</textarea>
                 </li>
                 <li id="center-btn">
                     <button id="edit-btn">Edit</button>

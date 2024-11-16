@@ -33,7 +33,7 @@ router.get("/:movieId/details", async (req, res) => {
     const movieId = req.params.movieId;
     const movie = await movieService.getOne(movieId).lean();
 
-    const isOwner = req.user?._id == movie.owner?.toString(); 
+    const isOwner = req.user?._id == movie.owner?.toString();
 
     res.render("movies/details", { movie, isOwner });
     movie.ratingView = getRatingViewData(movie.rating);
@@ -47,26 +47,37 @@ router.get("/:movieId/attach", async (req, res) => {
 });
 
 router.post("/:movieId/attach", async (req, res) => {
-    const movieId = req.params.movieId
-    const castId = req.body.cast
-    
-    await movieService.attach(movieId, castId)
+    const movieId = req.params.movieId;
+    const castId = req.body.cast;
+
+    await movieService.attach(movieId, castId);
 
     res.redirect(`/movies/${movieId}/details`);
 });
 
-router.get('/:movieId/delete', async (req, res) => {
+router.get("/:movieId/delete", async (req, res) => {
     const movieId = req.params.movieId;
 
     await movieService.remove(movieId);
 
-    res.redirect('/');
+    res.redirect("/");
 });
 
-router.get('/:movieId/edit', async (req, res) => {
+router.get("/:movieId/edit", async (req, res) => {
     const movieId = req.params.movieId;
 
-    res.render('movies/edit');
+    const movie = await movieService.getOne(movieId).lean();
+
+    res.render("movies/edit", { movie });
+});
+
+router.post("/:movieId/edit", async (req, res) => {
+    const movieData = req.body;
+    const movieId = req.params.movieId;
+
+    await movieService.edit(movieId, movieData);
+
+    res.redirect(`/movies/${movieId}/details`);
 })
 
 function getRatingViewData(rating) {
