@@ -27,10 +27,13 @@
                         class="details"
                     >Attach Cast</a>
                 </div>
+
+                {{#if isOwner}}
                 <div class="details-btn">
                     <button id="edit-button">Edit</button>
                     <button id="delete-button">Delete</button>
                 </div>
+                {{/if}}
             </div>
         </div>
         <div class="card_right">
