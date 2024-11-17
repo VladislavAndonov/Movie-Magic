@@ -42,3 +42,8 @@ JS Back-End Course Workshop @SoftUni
 5. Add owner to movie relation
 6. Add owner control buttons in details page
 7. Add dynamic navigation
+8. Logout
+
+!!Owner buttons not working properly!!
+
+9. Add route guards
