@@ -23,9 +23,14 @@ router.get("/create", isAuth, (req, res) => {
 
 router.post("/create", isAuth, async (req, res) => {
     const movieData = req.body;
-    const ownerId = req.user?._id;    
+    const ownerId = req.user?._id;
 
-    await movieService.create(movieData, ownerId);
+    try {
+        await movieService.create(movieData, ownerId);
+    } catch (err) {
+        console.log(err.message);
+        return res.end();
+    }
 
     res.redirect("/");
 });

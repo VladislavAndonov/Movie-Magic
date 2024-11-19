@@ -5,10 +5,16 @@ import { JWT_SECRET } from "../config/constants.js";
 
 import User from "../models/User.js";
 
-const register = (email, password) => {
+const register = async (email, password, rePassword) => {
     // Check if email already exists
 
-    return User.create({ email, password });
+    const userCount = await User.countDocuments({ email });
+
+    if (userCount > 0) {
+        throw new Error("Email already exists!");
+    };
+
+    return User.create({ email, password, rePassword });
 };
 
 const login = async (email, password) => {

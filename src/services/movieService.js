@@ -25,10 +25,7 @@ const getAll = async (filter = {}) => {
 };
 
 const create = (movie, ownerId) => {
-    Movie.create({...movie, owner: ownerId});
-
-    console.log(ownerId);
-    
+    Movie.create({...movie, owner: ownerId});    
 }
 
 const getOne = (movieId) => Movie.findById(movieId).populate('casts');
