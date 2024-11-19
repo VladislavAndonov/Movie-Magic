@@ -1,46 +1,45 @@
-<!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <title>Catalog Page</title>
-    <!-- Do not forget to change the path to the css file -->
-    <link href="/css/style.css" type="text/css" rel="stylesheet">
-</head>
+    <head>
+        <meta charset="UTF-8" />
+        <title>Catalog Page</title>
+        <!-- Do not forget to change the path to the css file -->
+        <link href="/css/style.css" type="text/css" rel="stylesheet" />
+    </head>
 
-<body>
+    <body>
 
-    <div id="box">
+        <div id="box">
 
-        <nav>
-            <img src="/img/logo.webp" alt="logo">
+            <nav>
+                <img src="/img/logo.webp" alt="logo" />
 
-            <ul class="menu">
-                <li><a href="/">Home</a></li>
-                <li><a href="/movies/search">Search</a></li>
-                <li><a href="/about">About</a></li>
-                <!--Users-->
-                {{#if isAuthenticated}}
-                <li><a href="/movies/create">Create Post</a></li>
-                <li><a href="/cast/create">Create Cast</a></li>
-                <li><a href="/auth/logout">Logout</a></li>
-                <!--Guests-->
-                {{else}}
-                <li><a href="/auth/login">Login</a></li>
-                <li><a href="/auth/register">Register</a></li>
-                {{/if}}
-            </ul>
+                <ul class="menu">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/movies/search">Search</a></li>
+                    <li><a href="/about">About</a></li>
+                    <!--Users-->
+                    {{#if isAuthenticated}}
+                        <li><a href="/movies/create">Create Post</a></li>
+                        <li><a href="/cast/create">Create Cast</a></li>
+                        <li><a href="/auth/logout">Logout</a></li>
+                        <!--Guests-->
+                    {{else}}
+                        <li><a href="/auth/login">Login</a></li>
+                        <li><a href="/auth/register">Register</a></li>
+                    {{/if}}
+                </ul>
+                {{#if userEmail}}<em>{{userEmail}}</em>{{/if}}
+            </nav>
 
-        </nav>
+            <main>
+                {{{body}}}
+            </main>
+            <footer>
+                © JS Back-End Workshop
+            </footer>
+        </div>
 
-        <main>
-            {{{body}}}
-        </main>
-        <footer>
-            © JS Back-End Workshop
-        </footer>
-    </div>
-
-</body>
+    </body>
 
 </html>

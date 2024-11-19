@@ -43,7 +43,8 @@ JS Back-End Course Workshop @SoftUni
 6. Add owner control buttons in details page
 7. Add dynamic navigation
 8. Logout
-
-!!Owner buttons not working properly!!
-
 9. Add route guards
+
+### Bonus:
+1. Automatic login on register
+2. Show email for logged users

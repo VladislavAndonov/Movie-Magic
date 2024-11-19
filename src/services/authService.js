@@ -1,34 +1,34 @@
 import bcrypt from "bcrypt";
-import jwt from "jsonwebtoken";
+import jwt from "../lib/jwt.js";
 
 import { JWT_SECRET } from "../config/constants.js";
 
 import User from "../models/User.js";
 
 const register = (email, password) => {
-    // TODO: Check if email already exists
+    // Check if email already exists
 
     return User.create({ email, password });
 };
 
 const login = async (email, password) => {
-    // TODO: Validate if the user exists
+    // Validate if the user exists
     const user = await User.findOne({ email });
 
     if (!user) {
         throw new Error("User does not exist!");
     }
 
-    // TODO: Validate if the entered password match the hashed pass in DB
+    // Validate if the entered password match the hashed pass in DB
     const isValid = await bcrypt.compare(password, user.password);
 
     if (!isValid) {
         throw new Error("Password does not match");
     }
 
-    // TODO: Generate and return JWT token
+    // Generate and return JWT token
     const payload = { _id: user._id, email };
-    const token = jwt.sign(payload, JWT_SECRET, { expiresIn: "2h" });
+    const token = await jwt.sign(payload, JWT_SECRET, { expiresIn: "2h" });
     
     return token;
 };

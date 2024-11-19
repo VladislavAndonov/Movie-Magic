@@ -9,20 +9,6 @@ function toArray(documents) {
     return documents.map((document) => document.toObject());
 }
 
-// URL: /movies/create
-router.get("/create", isAuth, (req, res) => {
-    res.render("movies/create");
-});
-
-router.post("/create", isAuth, async (req, res) => {
-    const movieData = req.body;
-    const ownerId = req.user?._id;
-
-    await movieService.create(movieData, ownerId);
-
-    res.redirect("/");
-});
-
 router.get("/search", async (req, res) => {
     const filter = req.query;
     const movies = await movieService.getAll(filter);
@@ -30,12 +16,26 @@ router.get("/search", async (req, res) => {
     res.render("home", { isSearch: true, movies: toArray(movies), filter });
 });
 
+// URL: /movies/create
+router.get("/create", isAuth, (req, res) => {
+    res.render("movies/create");
+});
+
+router.post("/create", isAuth, async (req, res) => {
+    const movieData = req.body;
+    const ownerId = req.user?._id;    
+
+    await movieService.create(movieData, ownerId);
+
+    res.redirect("/");
+});
+
 router.get("/:movieId/details", async (req, res) => {
     const movieId = req.params.movieId;
     const movie = await movieService.getOne(movieId).lean();
 
     const isOwner = movie.owner && movie.owner?.toString() === req.user?._id;
-
+    
     res.render("movies/details", { movie, isOwner });
 
     movie.ratingView = getRatingViewData(movie.rating);
