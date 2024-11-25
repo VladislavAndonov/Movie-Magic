@@ -3,7 +3,7 @@ import { Schema, model, Types } from "mongoose";
 const movieSchema = new Schema({
     title: {
         type: String,
-        required: true,
+        required: [true, 'Title is required!'],
         minLength: 5,
         validate: [/^[A-Za-z0-9\s]+$/, 'Title must contain only letters, numbers and spaces.']
     },

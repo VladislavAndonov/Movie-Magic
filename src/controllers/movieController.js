@@ -24,12 +24,12 @@ router.get("/create", isAuth, (req, res) => {
 router.post("/create", isAuth, async (req, res) => {
     const movieData = req.body;
     const ownerId = req.user?._id;
-
+    
     try {
         await movieService.create(movieData, ownerId);
-    } catch (err) {
-        console.log(err.message);
-        return res.end();
+    } catch (err) {        
+        const errorMessage = Object.values(err.errors)[0]?.message;
+        return res.render("movies/create", { error: errorMessage, movie: movieData });
     }
 
     res.redirect("/");
